@@ -9,6 +9,7 @@ ArbreBinaire::ArbreBinaire(int c){
 	nœud -> droite = NULL;
 }
 
+
 Nœud ArbreBinaire::arbreMin(Nœud x){
 	while(x->gauche != NULL)
 		x = x->gauche;
