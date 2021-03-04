@@ -41,6 +41,8 @@ void ArbreBinaire::arbreInsérer(Nœud racine, Nœud z){
 		y->droite = z;
 }
 
+// u replaced with v, node u's parent beomes v's parent
+// and u's parent gets v as a child 
 void  ArbreBinaire::traduire(Nœud racine,Nœud u,Nœud v){
 	if (u->p == NULL)
 		racine = v;
@@ -52,7 +54,7 @@ void  ArbreBinaire::traduire(Nœud racine,Nœud u,Nœud v){
 		v->p = u->p;
 }
 
-void ArbreBinaire::effacerArbre(Nœud t,Nœud z){
+void ArbreBinaire::effacerNœud(Nœud t,Nœud z){
 	if (z->gauche == NULL)
 		traduire(t, z, z->droite);
 	else if (z->droite == NULL)
@@ -65,7 +67,7 @@ void ArbreBinaire::effacerArbre(Nœud t,Nœud z){
 			y->droite->p = y;
 		}
 		traduire(t,z,y);
-		y->droite = z->gauche;
+		y->gauche = z->gauche;
 		y->gauche->p = y;
 	}
 }

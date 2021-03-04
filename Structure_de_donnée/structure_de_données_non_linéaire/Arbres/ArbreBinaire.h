@@ -11,5 +11,5 @@ public:
 	ArbreBinaire(int c);
 	void arbreInsérer(Nœud t, Nœud z);
 	Nœud obtenirNœud();
-	void effacerArbre(Nœud t, Nœud z);
+	void effacerNœud(Nœud t, Nœud z);
 };
