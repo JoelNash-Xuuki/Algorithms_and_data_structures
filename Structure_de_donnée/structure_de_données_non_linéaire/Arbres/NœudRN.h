@@ -1,7 +1,8 @@
-typedef char Clé;
+typedef int Clé;
 
 struct nœud{
 	Clé clé;
+	bool color
 	struct nœud *p;
 	struct nœud *gauche;
 	struct nœud *droite;

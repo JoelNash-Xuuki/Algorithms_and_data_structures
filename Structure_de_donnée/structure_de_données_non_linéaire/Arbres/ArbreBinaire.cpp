@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ArbreBinaire.h"
 
-ArbreBinaire::ArbreBinaire(int c){
+ArbreBinaire::ArbreBinaire(char c){
 	nœud = new ÉLÉMENT;
 	nœud -> clé = c;
 	nœud -> p = NULL;
@@ -70,6 +70,23 @@ void ArbreBinaire::effacerNœud(Nœud t,Nœud z){
 		y->gauche = z->gauche;
 		y->gauche->p = y;
 	}
+}
+
+//swap child t with parent x
+void ArbreBinaire::gaucheTourner(Nœud t, Nœud x){
+	Nœud y = x->droite;
+	x->droite = y->gauche;
+	if (y->gauche != NULL)
+		y->gauche->p = x;
+	y->p = x->p;
+	if (x->p == NULL)
+		t = y;
+	else if(x == x->p->gauche)
+		x->p->droite = y;
+	else 
+		x->p->droite = y;
+	y->gauche = x;
+	x->p = y;
 }
 
 Nœud ArbreBinaire::obtenirNœud(){

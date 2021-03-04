@@ -8,8 +8,9 @@ private:
 	Nœud arbreMin(Nœud x);
 	Nœud arbreMax(Nœud x);
 public:
-	ArbreBinaire(int c);
+	ArbreBinaire(char c);
 	void arbreInsérer(Nœud t, Nœud z);
 	Nœud obtenirNœud();
 	void effacerNœud(Nœud t, Nœud z);
+	void gaucheTourner(Nœud t, Nœud x);
 };
